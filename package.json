@@ -13,7 +13,9 @@
     "@types/react-dom": "^17.0.8",
     "@types/react-router-dom": "^5.1.7",
     "@types/three": "0.129.1",
+    "dotenv": "^8.2.0",
     "immer": "^9.0.3",
+    "node-fetch": "^3.3.2",
     "parcel": "^2.0.0-beta.3.1",
     "react": "^18.0.0-alpha-ed6c091fe-20210701",
     "react-dom": "^18.0.0-alpha-ed6c091fe-20210701",
@@ -26,9 +28,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "yarn clean:cache && parcel public/index.html",
-    "start:https": "yarn start --https",
-    "build": "parcel build public/index.html",
+    "start": "node api.js && yarn clean:cache && parcel public/index.html",
+    "start:https": "node api.js && yarn start --https",
+    "build": "node api.js && parcel build public/index.html",
     "clean": "rimraf node_modules .cache dist",
     "clean:cache": "rimraf .parcel-cache"
   }
